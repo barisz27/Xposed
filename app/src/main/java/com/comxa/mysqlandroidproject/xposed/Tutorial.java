@@ -21,6 +21,7 @@ public class Tutorial implements IXposedHookLoadPackage {
          XposedBridge.log("SystemUI'in icindeyik");
         // log mesajı basıyoruz..
         // mesaj xposed installerdaki log kayıtları ekranına gidiyor..
+        //
 
         // metodu hookluyoruz...
         findAndHookMethod("com.android.systemui.statusbar.policy.Clock", lpparam.classLoader, "updateClock", new XC_MethodHook() {
