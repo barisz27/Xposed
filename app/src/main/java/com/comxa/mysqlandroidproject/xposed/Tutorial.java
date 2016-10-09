@@ -13,7 +13,7 @@ import de.robv.android.xposed.callbacks.XC_InitPackageResources;
 import de.robv.android.xposed.callbacks.XC_LayoutInflated;
 import de.robv.android.xposed.callbacks.XC_LoadPackage;
 
-public class Tutorial implements IXposedHookLoadPackage, IXposedHookInitPackageResources {
+public class Tutorial implements IXposedHookLoadPackage {
 
     public void handleLoadPackage(final XC_LoadPackage.LoadPackageParam lpparam) throws Throwable {
         if (!lpparam.packageName.equals("com.android.systemui"))
@@ -38,6 +38,7 @@ public class Tutorial implements IXposedHookLoadPackage, IXposedHookInitPackageR
         });
     }
 
+    /*
     @Override
     public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
 
@@ -46,9 +47,11 @@ public class Tutorial implements IXposedHookLoadPackage, IXposedHookInitPackageR
             public void handleLayoutInflated(LayoutInflatedParam liparam) throws Throwable {
                 View navbar = (View) liparam.view.findViewById(
                         liparam.res.getIdentifier("nav_buttons", "id", "com.android.systemui"));
-                navbar.setBackgroundColor(Color.argb(50, 125, 125, 255));
+                // navbar.setBackgroundColor(Color.argb(50, 125, 125, 255));
+                navbar.setBackgroundColor(Color.CYAN);
             }
         });
 
     }
+    */
 }
