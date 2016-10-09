@@ -37,21 +37,4 @@ public class Tutorial implements IXposedHookLoadPackage {
             }
         });
     }
-
-    /*
-    @Override
-    public void handleInitPackageResources(XC_InitPackageResources.InitPackageResourcesParam resparam) throws Throwable {
-
-        resparam.res.hookLayout("com.android.systemui", "layout", "navigation_bar", new XC_LayoutInflated() {
-            @Override
-            public void handleLayoutInflated(LayoutInflatedParam liparam) throws Throwable {
-                View navbar = (View) liparam.view.findViewById(
-                        liparam.res.getIdentifier("nav_buttons", "id", "com.android.systemui"));
-                // navbar.setBackgroundColor(Color.argb(50, 125, 125, 255));
-                navbar.setBackgroundColor(Color.CYAN);
-            }
-        });
-
-    }
-    */
 }
