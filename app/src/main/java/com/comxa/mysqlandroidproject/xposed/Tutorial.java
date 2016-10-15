@@ -21,14 +21,15 @@ public class Tutorial implements IXposedHookLoadPackage {
          XposedBridge.log("SystemUI'in icindeyik");
         // log mesajı basıyoruz..
         // mesaj xposed installerdaki log kayıtları ekranına gidiyor..
-        //
 
         // metodu hookluyoruz...
         findAndHookMethod("com.android.systemui.statusbar.policy.Clock", lpparam.classLoader, "updateClock", new XC_MethodHook() {
+
             @Override
             protected void beforeHookedMethod(MethodHookParam param) throws Throwable {
                 // this will be called before the clock was updated by the original method
             }
+
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
                 // this will be called after the clock was updated by the original method
